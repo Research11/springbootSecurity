@@ -1,0 +1,43 @@
+package com.pb.security.code.sms;
+
+
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.pb.security.service.MymUserDetailService;
+
+public class SmsCodeAuthenticationProvider implements AuthenticationProvider {
+
+    private MymUserDetailService userDetailService;
+
+    @Override
+    public Authentication authenticate(Authentication authentication) {
+        SmsCodeAuthenticationToken authenticationToken = (SmsCodeAuthenticationToken) authentication;
+        UserDetails userDetails = userDetailService.loadUserByUsername((String) authenticationToken.getPrincipal());
+
+        if (userDetails == null)
+            throw new InternalAuthenticationServiceException("没有该用户！");
+
+        SmsCodeAuthenticationToken authenticationResult = new SmsCodeAuthenticationToken(userDetails, userDetails.getAuthorities());
+
+        authenticationResult.setDetails(authenticationToken.getDetails());
+
+        return authenticationResult;
+    }
+
+    @Override
+    public boolean supports(Class<?> aClass) {
+        return SmsCodeAuthenticationToken.class.isAssignableFrom(aClass);
+    }
+
+    public MymUserDetailService getUserDetailService() {
+        return userDetailService;
+    }
+
+    public void setUserDetailService(MymUserDetailService userDetailService) {
+        this.userDetailService = userDetailService;
+    }
+
+}
