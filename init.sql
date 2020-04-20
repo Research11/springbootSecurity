@@ -192,12 +192,12 @@ CREATE TABLE `t_dept` (
 -- ----------------------------
 -- Records of t_dept
 -- ----------------------------
-INSERT INTO `t_dept` VALUES ('1', '0', '开发部', null, '2018-01-04 15:42:26');
-INSERT INTO `t_dept` VALUES ('2', '1', '开发一部', null, '2018-01-04 15:42:34');
-INSERT INTO `t_dept` VALUES ('3', '1', '开发二部', null, '2018-01-04 15:42:29');
-INSERT INTO `t_dept` VALUES ('4', '0', '市场部', null, '2018-01-04 15:42:36');
-INSERT INTO `t_dept` VALUES ('5', '0', '人事部', null, '2018-01-04 15:42:32');
-INSERT INTO `t_dept` VALUES ('6', '0', '测试部', null, '2018-01-04 15:42:38');
+INSERT INTO `t_dept` VALUES ('1', '0', '开发部', null, SYSDATE());
+INSERT INTO `t_dept` VALUES ('2', '1', '开发一部', null, SYSDATE());
+INSERT INTO `t_dept` VALUES ('3', '1', '开发二部', null, SYSDATE());
+INSERT INTO `t_dept` VALUES ('4', '0', '市场部', null, SYSDATE());
+INSERT INTO `t_dept` VALUES ('5', '0', '人事部', null, SYSDATE());
+INSERT INTO `t_dept` VALUES ('6', '0', '测试部', null, SYSDATE());
 
 -- ----------------------------
 -- Table structure for t_dict
@@ -246,10 +246,10 @@ CREATE TABLE `t_job` (
 -- ----------------------------
 -- Records of t_job
 -- ----------------------------
-INSERT INTO `t_job` VALUES ('1', 'testTask', 'test', 'mrbird', '0/1 * * * * ?', '1', '有参任务调度测试', '2018-02-24 16:26:14');
-INSERT INTO `t_job` VALUES ('2', 'testTask', 'test1', null, '0/10 * * * * ?', '1', '无参任务调度测试', '2018-02-24 17:06:23');
-INSERT INTO `t_job` VALUES ('3', 'testTask', 'test', 'hello world', '0/1 * * * * ?', '1', '有参任务调度测试,每隔一秒触发', '2018-02-26 09:28:26');
-INSERT INTO `t_job` VALUES ('11', 'testTask', 'test2', null, '0/5 * * * * ?', '1', '测试异常', '2018-02-26 11:15:30');
+INSERT INTO `t_job` VALUES ('1', 'testTask', 'test', 'mrbird', '0/1 * * * * ?', '1', '有参任务调度测试', SYSDATE());
+INSERT INTO `t_job` VALUES ('2', 'testTask', 'test1', null, '0/10 * * * * ?', '1', '无参任务调度测试', SYSDATE());
+INSERT INTO `t_job` VALUES ('3', 'testTask', 'test', 'hello world', '0/1 * * * * ?', '1', '有参任务调度测试,每隔一秒触发', SYSDATE());
+INSERT INTO `t_job` VALUES ('11', 'testTask', 'test2', null, '0/5 * * * * ?', '1', '测试异常', SYSDATE());
 
 -- ----------------------------
 -- Table structure for t_job_log
@@ -271,43 +271,43 @@ CREATE TABLE `t_job_log` (
 -- ----------------------------
 -- Records of t_job_log
 -- ----------------------------
-INSERT INTO `t_job_log` VALUES ('2448', '3', 'testTask', 'test', 'hello world', '0', null, '0', '2018-03-20 15:31:50');
-INSERT INTO `t_job_log` VALUES ('2449', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:31:51');
-INSERT INTO `t_job_log` VALUES ('2450', '3', 'testTask', 'test', 'hello world', '0', null, '2', '2018-03-20 15:31:52');
-INSERT INTO `t_job_log` VALUES ('2451', '3', 'testTask', 'test', 'hello world', '0', null, '0', '2018-03-20 15:31:53');
-INSERT INTO `t_job_log` VALUES ('2452', '3', 'testTask', 'test', 'hello world', '0', null, '2', '2018-03-20 15:31:54');
-INSERT INTO `t_job_log` VALUES ('2453', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:31:55');
-INSERT INTO `t_job_log` VALUES ('2454', '3', 'testTask', 'test', 'hello world', '0', null, '0', '2018-03-20 15:31:56');
-INSERT INTO `t_job_log` VALUES ('2455', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:31:57');
-INSERT INTO `t_job_log` VALUES ('2456', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:31:59');
-INSERT INTO `t_job_log` VALUES ('2457', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:31:59');
-INSERT INTO `t_job_log` VALUES ('2458', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:32:00');
-INSERT INTO `t_job_log` VALUES ('2459', '3', 'testTask', 'test', 'hello world', '0', null, '0', '2018-03-20 15:32:01');
-INSERT INTO `t_job_log` VALUES ('2460', '3', 'testTask', 'test', 'hello world', '0', null, '5', '2018-03-20 15:32:02');
-INSERT INTO `t_job_log` VALUES ('2461', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:32:03');
-INSERT INTO `t_job_log` VALUES ('2462', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:32:04');
-INSERT INTO `t_job_log` VALUES ('2463', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:32:05');
-INSERT INTO `t_job_log` VALUES ('2464', '3', 'testTask', 'test', 'hello world', '0', null, '1', '2018-03-20 15:32:06');
-INSERT INTO `t_job_log` VALUES ('2465', '11', 'testTask', 'test2', null, '1', 'java.lang.NoSuchMethodException: cc.mrbird.job.task.TestTask.test2()', '0', '2018-03-20 15:32:26');
-INSERT INTO `t_job_log` VALUES ('2466', '2', 'testTask', 'test1', null, '0', null, '1', '2018-04-02 15:26:40');
-INSERT INTO `t_job_log` VALUES ('2467', '2', 'testTask', 'test1', null, '0', null, '1', '2018-04-02 15:26:50');
-INSERT INTO `t_job_log` VALUES ('2468', '2', 'testTask', 'test1', null, '0', null, '1', '2018-04-02 15:27:20');
-INSERT INTO `t_job_log` VALUES ('2469', '2', 'testTask', 'test1', null, '0', null, '3', '2018-04-02 17:29:20');
-INSERT INTO `t_job_log` VALUES ('2470', '2', 'testTask', 'test1', null, '0', null, '1', '2018-04-02 17:29:30');
-INSERT INTO `t_job_log` VALUES ('2471', '2', 'testTask', 'test1', null, '0', null, '1', '2018-04-02 17:29:40');
-INSERT INTO `t_job_log` VALUES ('2472', '2', 'testTask', 'test1', null, '0', null, '14', '2018-04-02 17:29:50');
-INSERT INTO `t_job_log` VALUES ('2473', '2', 'testTask', 'test1', null, '0', null, '1', '2018-04-02 17:30:00');
-INSERT INTO `t_job_log` VALUES ('2474', '2', 'testTask', 'test1', null, '0', null, '0', '2018-04-02 17:30:10');
-INSERT INTO `t_job_log` VALUES ('2475', '2', 'testTask', 'test1', null, '0', null, '1', '2018-04-02 17:30:20');
-INSERT INTO `t_job_log` VALUES ('2476', '3', 'testTask', 'test', 'hello world', '0', null, '4', '2018-09-06 14:15:40');
-INSERT INTO `t_job_log` VALUES ('2477', '11', 'testTask', 'test2', null, '1', 'java.lang.NoSuchMethodException: cc.mrbird.quartz.task.TestTask.test2()', '11', '2018-09-06 14:15:50');
-INSERT INTO `t_job_log` VALUES ('2478', '2', 'testTask', 'test1', null, '0', null, '1', '2018-09-06 14:16:10');
-INSERT INTO `t_job_log` VALUES ('2479', '2', 'testTask', 'test1', null, '0', null, '1', '2018-09-06 14:16:19');
-INSERT INTO `t_job_log` VALUES ('2480', '2', 'testTask', 'test1', null, '0', null, '1', '2018-09-06 14:16:20');
-INSERT INTO `t_job_log` VALUES ('2481', '2', 'testTask', 'test1', null, '0', null, '1', '2018-09-06 14:16:30');
-INSERT INTO `t_job_log` VALUES ('2482', '2', 'testTask', 'test1', null, '0', null, '1', '2018-09-06 14:16:40');
-INSERT INTO `t_job_log` VALUES ('2483', '2', 'testTask', 'test1', null, '0', null, '1', '2018-09-06 14:16:50');
-INSERT INTO `t_job_log` VALUES ('2484', '2', 'testTask', 'test1', null, '0', null, '1', '2018-09-06 14:17:00');
+INSERT INTO `t_job_log` VALUES ('2448', '3', 'testTask', 'test', 'hello world', '0', null, '0', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2449', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2450', '3', 'testTask', 'test', 'hello world', '0', null, '2', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2451', '3', 'testTask', 'test', 'hello world', '0', null, '0', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2452', '3', 'testTask', 'test', 'hello world', '0', null, '2', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2453', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2454', '3', 'testTask', 'test', 'hello world', '0', null, '0', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2455', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2456', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2457', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2458', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2459', '3', 'testTask', 'test', 'hello world', '0', null, '0', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2460', '3', 'testTask', 'test', 'hello world', '0', null, '5', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2461', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2462', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2463', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2464', '3', 'testTask', 'test', 'hello world', '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2465', '11', 'testTask', 'test2', null, '1', 'java.lang.NoSuchMethodException: com.pb.job.task.TestTask.test2()', '0', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2466', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2467', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2468', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2469', '2', 'testTask', 'test1', null, '0', null, '3', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2470', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2471', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2472', '2', 'testTask', 'test1', null, '0', null, '14',SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2473', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2474', '2', 'testTask', 'test1', null, '0', null, '0', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2475', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2476', '3', 'testTask', 'test', 'hello world', '0', null, '4', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2477', '11', 'testTask', 'test2', null, '1', 'java.lang.NoSuchMethodException: com.pb.quartz.task.TestTask.test2()', '11', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2478', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2479', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2480', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2481', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2482', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2483', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
+INSERT INTO `t_job_log` VALUES ('2484', '2', 'testTask', 'test1', null, '0', null, '1', SYSDATE());
 
 -- ----------------------------
 -- Table structure for t_log
@@ -523,7 +523,7 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', 'mrbird', '$2a$10$WRUqPfZUAhRgwaiuBPE0XeUoPZKFgGTkRjaU04dHnL99leE4kBv1W', '1', 'mrbird@qq.com', '17788888888', '1', '2018-08-22 11:37:47', '2018-09-15 14:53:52', '2018-08-27 21:27:18', '2', 'green', '20180414165909.jpg', '我是创始人');
+INSERT INTO `t_user` VALUES ('1', 'admin', '$2a$10$WRUqPfZUAhRgwaiuBPE0XeUoPZKFgGTkRjaU04dHnL99leE4kBv1W', '1', 'admin@qq.com', '', '1', '2018-08-22 11:37:47', '2018-09-15 14:53:52', '2018-08-27 21:27:18', '2', 'green', '20180414165909.jpg', '我是创始人');
 INSERT INTO `t_user` VALUES ('2', 'scott', '$2a$10$vtf0gsIpFnzs3x9kA/2fW.oV41aAXFt4e4S0vBURGuFdLJ5F7xx2W', '2', 'scott@qq.com', '', '1', '2018-08-22 11:37:47', '2018-09-15 14:54:36', '2018-08-27 21:27:18', '1', 'red', '20180414170003.jpg', '');
 
 -- ----------------------------
